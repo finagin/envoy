@@ -7,11 +7,11 @@
 0) Clone `Envoy.blade.php` into root project directory
 	* Using `curl`
 		```bash
-		curl -sSOL https://cdn.rawgit.com/finagin/envoy/master/Envoy.blade.php
+		curl -sSOL https://cdn.rawgit.com/finagin/envoy/1.0.0/Envoy.blade.php
 		```
 	* Or `wget`
 		```bash
-		wget -o- curl -sSL https://cdn.rawgit.com/finagin/envoy/master/Envoy.blade.php
+		wget -o- curl -sSL https://cdn.rawgit.com/finagin/envoy/1.0.0/Envoy.blade.php
 		```
 0) Create `.env.deploy` if u want.
 0) Setting up enviroment variables in `.env` file.
