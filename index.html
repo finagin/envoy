@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cat <<'EOF' | tee -a .env.example .env > /dev/null 2>&1
+
+DEPLOY_SERVER=
+DEPLOY_REPOSITORY=
+DEPLOY_PATH=
+EOF
+
+DOWNLOAD_LINK=https://finagin.github.io/envoy/Envoy.blade.php
+
+wget -o- curl -sSL $DOWNLOAD_LINK 2>/dev/null ||\
+curl -sSOL $DOWNLOAD_LINK 2>/dev/null ||\
+printf "\e[91mCommand \e[93mwget\e[91m and \e[93mcurl\e[91m not found\n\e[96mPlease install something\n";
