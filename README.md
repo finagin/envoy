@@ -4,14 +4,14 @@
 	```bash
 	composer global require "laravel/envoy=~1.0"
 	```
-0) Clone `Envoy.blade.php` into root project directory
+0) Call installer into root project directory to copy `Envoy.blade.php` and append environment variables into `.env` and `.env.example` 
 	* Using `curl`
 		```bash
-		curl -sSOL https://cdn.rawgit.com/finagin/envoy/1.0.0/Envoy.blade.php
+		curl -sSL https://finagin.github.io/envoy | sh
 		```
 	* Or `wget`
 		```bash
-		wget -o- curl -sSL https://cdn.rawgit.com/finagin/envoy/1.0.0/Envoy.blade.php
+		wget -qO- https://finagin.github.io/envoy | sh
 		```
 0) Create `.env.deploy` if u want.
 0) Setting up enviroment variables in `.env` file.
