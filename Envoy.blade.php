@@ -59,6 +59,7 @@
     task_composer
     task_migrate
     task_cache
+    task_workers
     task_finish
     task_option_cleanup
 @endstory
@@ -66,6 +67,7 @@
 @story('rollback')
     task_rollback
     task_cache
+    task_workers
 @endstory
 
 @task('task_rollback')
@@ -123,6 +125,16 @@
     php ${WORK_DIR}/artisan cache:clear --quiet;
     php ${WORK_DIR}/artisan config:cache --quiet;
     printf "\e[92mCache cleared\n";
+@endtask
+
+@task('task_workers')
+    if [ ! -f {{ $release }}/artisan ]; then
+        WORK_DIR="{{ $path }}/current";
+    else
+        WORK_DIR="{{ $release }}";
+    fi
+    php ${WORK_DIR}/artisan queue:restart
+    printf "\e[92mWorkers restarted\n";
 @endtask
 
 @task('task_finish')
